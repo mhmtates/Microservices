@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "serviceActions": {
+        "aspdotnetcoremvc.web": "StartWithoutDebugging",
+        "basket.api": "StartWithoutDebugging",
+        "basketdb": "StartWithoutDebugging",
+        "catalog.api": "StartWithoutDebugging",
+        "catalogdb": "StartWithoutDebugging",
+        "discount.api": "StartDebugging",
+        "discountdb": "StartWithoutDebugging",
+        "fakepayment.api": "StartWithoutDebugging",
+        "gateway.api": "StartDebugging",
+        "identitydb": "StartWithoutDebugging",
+        "identityserver.api": "StartDebugging",
+        "imagestock.api": "StartDebugging",
+        "order.api": "StartDebugging",
+        "orderdb": "StartWithoutDebugging",
+        "rabbitmq": "StartWithoutDebugging"
+      },
+      "commandVersion": "1.0"
+    }
+  }
+}

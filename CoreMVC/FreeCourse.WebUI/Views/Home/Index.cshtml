@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    var count = 0;
+}
+@model List<CourseViewModel>
+<h2>Kurslar</h2>
+<hr />
+@if (Model.Any())
+{
+    @foreach (var item in Model)
+    {
+        count++;
+        if ((count == 1) || (count % 3 == 1))
+        {
+            @Html.Raw("<div class='row row-cols-1 row-cols-md-3 g-4'>");
+        }
+        <div class="col">
+            <div class="card h-100">
+                <img src= "@item.StockPictureUrl" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <div class="badge bg-primary"> Kategori: @item.Category.Name</div>
+                    <p class="card-text">@item.BriefDescription</p>
+                    <h4 class="text-primary">@item.Price TL </h4>
+                </div>
+                 <a asp-controller="Home" asp-action="Detail" class="btn btn-success"  asp-route-id="@item.Id">Detay Sayfası</a>
+                </div>
+            </div>
+       
+
+        if (count % 3 == 0)
+        {
+            @Html.Raw("</div>")
+        }
+
+    }
+
+}
